@@ -1,0 +1,11 @@
+{
+    "name": "Aleks",
+    "profession": "AI Automation Engineer",
+    "learning hours": 8,
+    "skills": [
+        "Python",
+        "Git",
+        "AI",
+        "PostgreSQL"
+    ]
+}
