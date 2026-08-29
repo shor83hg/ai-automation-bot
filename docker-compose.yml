@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: ai_user
+      POSTGRES_PASSWORD: supersecret
+      POSTGRES_DB: ai_bot_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  ai_bot:
+    build: .
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    depends_on:
+      - postgres_db
+
+volumes:
+  pg_data:
+
